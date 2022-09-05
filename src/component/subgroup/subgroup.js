@@ -1,3 +1,5 @@
+import { HeadText } from "../app/App";
+
 function SubGroups({speciality, chooseSpeciality, onChoosSubGroup}) {
     const specObj = speciality.filter(({name}) => name == chooseSpeciality);
 
@@ -5,6 +7,7 @@ function SubGroups({speciality, chooseSpeciality, onChoosSubGroup}) {
 
     return (
         <div>
+            <HeadText>Выберите подгруппу: </HeadText>
             {btns}
         </div>
     );
