@@ -102,11 +102,26 @@ class App extends Component{
     render () {
         const {group, speciality, subgroup} = this.state;
 
-        const specialityChoose = (group == null && speciality == null) ? <Speciality speciality={specialityObject} onChooseSpeciality={this.onChooseSpeciality}/> : null;
-        const groupChoose = (speciality && group == null) ? <Groups onChooseGroup={this.onChooseGroup} speciality={specialityObject} chooseSpeciality={this.state.speciality}/> : null;
-        const subGroupChoose = (speciality && group && subgroup == null) ? <SubGroups speciality={specialityObject} chooseSpeciality={this.state.speciality} onChoosSubGroup={this.onChoosSubGroup}/> : null;
-        const ordinary = (speciality && group && subgroup) ? <Ordinary state={this.state}/> : null;
-        const back = speciality ? <button onClick={() => {this.onBack()}} className="btn btn-secondary">Назад</button> : null; 
+        const specialityChoose = (group == null && speciality == null) ? <Speciality 
+            speciality={specialityObject}
+            onChooseSpeciality={this.onChooseSpeciality}
+        /> : null;
+        const groupChoose = (speciality && group == null) ? <Groups 
+            onChooseGroup={this.onChooseGroup}
+            speciality={specialityObject}
+            chooseSpeciality={this.state.speciality}
+        /> : null;
+        const subGroupChoose = (speciality && group && subgroup == null) ? <SubGroups
+            speciality={specialityObject}
+            chooseSpeciality={this.state.speciality}
+            onChoosSubGroup={this.onChoosSubGroup}
+        /> : null;
+        const ordinary = (speciality && group && subgroup) ? <Ordinary
+            state={this.state}
+        /> : null;
+        const back = speciality ? <button
+            onClick={() => {this.onBack()}}
+            className="btn btn-secondary">Назад</button> : null; 
 
         return (
             <Container>
